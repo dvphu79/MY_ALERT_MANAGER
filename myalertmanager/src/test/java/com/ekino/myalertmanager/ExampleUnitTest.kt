@@ -1,4 +1,4 @@
-package com.ekino.myapplication
+package com.ekino.myalertmanager
 
 import org.junit.Test
 

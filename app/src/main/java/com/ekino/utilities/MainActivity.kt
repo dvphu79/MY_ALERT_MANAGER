@@ -1,10 +1,10 @@
-package com.ekino.myapplication
+package com.ekino.utilities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import com.ekino.utilities.AlertManager
+import com.ekino.myalertmanager.AlertManager
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -16,7 +16,9 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         Handler(Looper.getMainLooper()).postDelayed({
-            AlertManager.showAlert("Hello")
-        }, 3000)
+            if (!AlertManager.isAlertShowing) {
+                AlertManager.showAlert("Hello")
+            }
+        }, 3000L)
     }
 }

@@ -1,4 +1,4 @@
-package com.ekino.utilities
+package com.ekino.myalertmanager
 
 import android.content.Context
 import android.content.DialogInterface.BUTTON_POSITIVE
@@ -20,5 +20,8 @@ object AlertManager {
         alert.setTitle(message)
         alert.show()
     }
+
+    val isAlertShowing: Boolean
+        get() = alert.isShowing
 
 }
